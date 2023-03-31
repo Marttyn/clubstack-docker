@@ -1,4 +1,4 @@
-![Clubstack Logo](https://www.clubstack.tech/uploads/clubstack_logo-white.png)
+![Clubstack Logo](https://www.clubstack.tech/uploads/clubstack_logo.png)
 
 ## ClubStack Stock Management System
 This is a simple stock management system that allows you to track product inventory and orders. It was built using PHP 8.2, MySQL 8, and the MVC architectural pattern.
