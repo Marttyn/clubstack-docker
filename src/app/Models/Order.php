@@ -4,13 +4,28 @@ namespace App\Models;
 
 class Order extends \Illuminate\Database\Eloquent\Model
 {
-    protected $table = 'order';
+    /**
+     * Table name
+     *
+     * @var string $table
+     */
+    protected string $table = 'order';
 
-    protected $fillable = [
+    /**
+     * Model attributes that can be mass modified
+     *
+     * @var string[] $fillable
+     */
+    protected array $fillable = [
         'date'
     ];
 
-    public function products()
+    /**
+     * Many-to-many relationship with products
+     *
+     * @return mixed
+     */
+    public function products(): mixed
     {
         return $this->belongsToMany(Product::class, 'order_has_product');
     }
