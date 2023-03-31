@@ -1,7 +1,7 @@
 <?php
 /**
- * @var Illuminate\Database\Eloquent\Collection $products
- * @var App\Models\Product $product
+ * @var Illuminate\Support\Collection $products
+ * @var stdClass $product
  */
 ?>
 <!DOCTYPE html>
@@ -14,6 +14,15 @@
 <body>
 <div class="container">
     <h1>Product Information</h1>
+    <a href="/reseedDB">Reset DB</a><br />
+    <a href="/addProductsOrders">Rerun populate product and order procedure</a><br />
+    <a href="/addStocktoAll">Add random stock to all products</a><br />
+    <form action="/addStocktoProduct" method="get">
+        <label for="productid">Product ID</label>
+        <input type="text" name="productid" id="productid" required>
+        <button type="submit">Add random stock to the product</button>
+    </form>
+
     <table class="table table-striped">
         <thead>
         <tr>
@@ -28,7 +37,7 @@
         </thead>
         <tbody>
         <!-- Loop through the products and output their information in each row of the table -->
-        <?php foreach ($products as $product) : ?>
+        <?php if (isset($products)) foreach ($products as $product) : ?>
             <tr>
             <?php foreach ($product as $key => $value) : ?>
                     <td><?= $value ?></td>
